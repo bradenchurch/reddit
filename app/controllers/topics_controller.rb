@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
   #   @accounts = Account.all
   # end
   # Topic -> @sub.topics
-  
+
   def index
    @topics = @sub.topics
   end
@@ -50,9 +50,11 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:title, :body)
     end
+
     def set_topic
       @topic = Topic.find(params[:id])
     end
+    
     def set_sub
       @sub = Sub.find(params[:sub_id])
     end
